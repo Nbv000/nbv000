@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Джон / Архив идей</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #18191a;
+      --fg: #f4f4f4;
+      --card-bg: rgba(30,32,36,0.98);
+      --accent: #16e29f;
+      --accent2: #58baff;
+      --header-height: 64px;
+      --radius: 16px;
+      --shadow: 0 8px 32px rgba(0,0,0,0.16);
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: var(--header-height);
+      padding: 0 48px;
+      border-bottom: 1px solid #222326;
+      background: transparent;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    nav {
+      display: flex;
+      gap: 24px;
+    }
+    nav a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 7px;
+      transition: background 0.18s, color 0.18s;
+      font-size: 1.1rem;
+    }
+    nav a:hover {
+      background: #23272d;
+      color: #fff;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 32px auto 0 auto;
+      padding: 0 18px 32px 18px;
+    }
+
+    .hero {
+      margin: 42px 0 36px 0;
+    }
+    .typed {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      display: inline-block;
+      white-space: pre-line;
+    }
+    .cursor {
+      display: inline-block;
+      width: 1ch;
+      color: var(--accent2);
+      animation: blink 1s steps(2, start) infinite;
+      font-weight: 600;
+      font-size: 2.2rem;
+      vertical-align: middle;
+      margin-left: 1px;
+    }
+    @keyframes blink {
+      to { opacity: 0; }
+    }
+
+    .cards-row {
+      display: flex;
+      gap: 18px;
+      margin: 12px 0 34px 0;
+      flex-wrap: wrap;
+    }
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 22px 26px 18px 22px;
+      min-width: 230px;
+      max-width: 300px;
+      margin-bottom: 16px;
+      transition: transform 0.13s, box-shadow 0.21s;
+      cursor: pointer;
+      border: 1.3px solid transparent;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .card:hover {
+      transform: translateY(-3px) scale(1.025);
+      box-shadow: 0 8px 36px rgba(22,226,159,0.09);
+      border: 1.3px solid var(--accent);
+      background: rgba(22,226,159,0.09);
+    }
+    .card .date {
+      color: #b0b3b8;
+      font-size: 0.96rem;
+      margin-bottom: 3px;
+      font-family: 'Inter', monospace;
+    }
+    .card .title {
+      font-size: 1.12rem;
+      font-weight: 600;
+      margin-bottom: 3px;
+      color: var(--fg);
+    }
+    .card .desc {
+      font-size: 0.99rem;
+      color: #b0b3b8;
+      margin-bottom: 4px;
+    }
+
+    h2 {
+      margin-top: 18px;
+      margin-bottom: 8px;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--accent2);
+      letter-spacing: 1px;
+    }
+    .footer {
+      margin-top: 60px;
+      padding: 24px 0 16px 0;
+      color: #bababa;
+      text-align: center;
+      font-size: 1.05rem;
+      border-top: 1px solid #212224;
+    }
+    .contacts {
+      margin-top: 6px;
+      font-size: 1.06rem;
+      color: var(--accent);
+    }
+    @media (max-width: 600px) {
+      .container { max-width: 98vw; }
+      .cards-row { flex-direction: column; gap: 8px; }
+      header { padding: 0 16px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">🧠 Джон / Архив</div>
+    <nav>
+      <a href="#">Главная</a>
+      <a href="#">Проекты</a>
+      <a href="#">Дневник</a>
+      <a href="#">О себе</a>
+      <a href="#">Контакты</a>
+    </nav>
+  </header>
+  <div class="container">
+    <section class="hero">
+      <div class="typed" id="typed-text"></div><span class="cursor" id="typed-cursor">_</span>
+      <p style="margin-top:22px;max-width:650px;color:#b0b3b8;font-size:1.16rem;">
+        Здесь всё может быть начато и не закончено — и это нормально. Сайт — живой архив идей, экспериментов и проектов.
+      </p>
+    </section>
+
+    <section>
+      <h2>Последние записи</h2>
+      <div class="cards-row">
+        <div class="card">
+          <div class="date">📔 25.07.2025</div>
+          <div class="title">Прототип нового планера</div>
+          <div class="desc">Как сделать бумажный органайзер для людей с СДВГ</div>
+        </div>
+        <div class="card">
+          <div class="date">💡 23.07.2025</div>
+          <div class="title">Генератор идей для бота</div>
+          <div class="desc">Albion: описание механики динамического рынка</div>
+        </div>
+        <div class="card">
+          <div class="date">🧩 21.07.2025</div>
+          <div class="title">Техно-структура дневника</div>
+          <div class="desc">Первые мысли о блоках и структуре для гибкой работы</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Проекты</h2>
+      <div class="cards-row">
+        <div class="card">
+          <div class="title">🤖 Albion Bot</div>
+          <div class="desc">Бот для анализа рынка Albion Online, торговые маршруты, автоматизация.</div>
+        </div>
+        <div class="card">
+          <div class="title">📈 Инвест-бот</div>
+          <div class="desc">Cистема отслеживания акций, сигналов и стратегий пассивного дохода.</div>
+        </div>
+        <div class="card">
+          <div class="title">📓 Планер</div>
+          <div class="desc">Методика и бумажный органайзер для людей с СДВГ и творческим мышлением.</div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="footer">
+    <div>Сайт обновляется так же хаотично, как и мои интересы.</div>
+    <div class="contacts">Telegram: @your_telegram &nbsp; | &nbsp; Email: example@domain.ru</div>
+  </div>
+  <script>
+    // typing effect for hero (native js, no deps)
+    const text = "Привет! Это мой личный сайт — не портфолио, а лаборатория идей и заметок.";
+    const typed = document.getElementById('typed-text');
+    const cursor = document.getElementById('typed-cursor');
+    let idx = 0;
+    function type() {
+      if (idx <= text.length) {
+        typed.innerHTML = text.slice(0, idx);
+        idx++;
+        setTimeout(type, idx < 6 ? 180 : (idx < 24 ? 36 : 22));
+      } else {
+        cursor.style.animation = "blink 1s steps(2, start) infinite";
+      }
+    }
+    type();
+  </script>
+</body>
+</html>
+
