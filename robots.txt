@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nbv000.su/sitemap.xml
